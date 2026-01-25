@@ -1,0 +1,16 @@
+[Unit]
+Description=Motion Detector Application
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/motion-detector
+ExecStart=/usr/bin/python3 /home/pi/motion-detector/main.py
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
